@@ -3,8 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './componets/Navbar';
 import ShowPage from './pages/ShowPage';
 import FavouritesPage from './pages/FavoritesPage';
+import HomePage from './pages/HomePage'; // Import the HomePage component
 
-// App component: Main component that renders the Navbar and sets up routes for ShowPage and FavouritesPage
+// App component: Main component that renders the Navbar and sets up routes for ShowPage, FavouritesPage, and HomePage
 const App = () => {
     return (
         <Router>
@@ -13,6 +14,7 @@ const App = () => {
                 <Navbar />
                 <Routes>
                     {/* Define routes for different components */}
+                    <Route path="/" element={<HomePage />} /> {/* Route for HomePage component */}
                     <Route path="/show/:id" element={<ShowPage />} />
                     <Route path="/favorites" element={<FavouritesPage />} />
                 </Routes>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import Show from '../components/ShowDetail';
+import Show from '../componets/ShowDetail';
 
 // ShowPage component: Renders the Show component based on the matched route
 const ShowPage = () => {
