@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-
+import '../styles/HomePageS'
 
 // HomePage component: Fetches and displays a list of shows
 const HomePage = () => {
