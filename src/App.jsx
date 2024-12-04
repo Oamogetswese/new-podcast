@@ -1,25 +1,25 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './componets/Navbar';
-import ShowDetail from './pages/ShowPage';
+import ShowPage from './pages/ShowPage';
 import FavouritesPage from './pages/FavoritesPage';
 
-// App component: Main component that renders the Navbar, ShowDetail, and FavouritesPage components
+// App component: Main component that renders the Navbar and sets up routes for ShowPage and FavouritesPage
 const App = () => {
-    // Example show ID to pass to the ShowDetail component
-    const showId = '123'; // Replace with the actual show ID
-
     return (
-        <div>
-            {/* Render the Navbar component */}
-            <Navbar />
-            {/* Render the ShowDetail component and pass the show ID as a prop */}
-            <ShowDetail showId={showId} />
-            {/* Render the FavouritesPage component */}
-            <FavouritesPage />
-        </div>
+        <Router>
+            <div>
+                {/* Render the Navbar component */}
+                <Navbar />
+                <Routes>
+                    {/* Define routes for different components */}
+                    <Route path="/show/:id" element={<ShowPage />} />
+                    <Route path="/favorites" element={<FavouritesPage />} />
+                </Routes>
+            </div>
+        </Router>
     );
 };
 
 // Export the App component for use in other parts of the app
 export default App;
-
